@@ -2,5 +2,5 @@
 - src: geerlingguy.postgresql
 
 # Install NGINX role from galaxy
-- src: geerlingguy.nginx
+- src: nginxinc.nginx
 
