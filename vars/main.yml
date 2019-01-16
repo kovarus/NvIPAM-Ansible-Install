@@ -8,7 +8,7 @@ postgresql_users:
 nginx_http_template_enable: true
 nginx_http_template:
   default:
-    template_file: http/default.conf.j2
+    template_file: ./templates/default.conf.j2
     conf_file_name: default.conf
     conf_file_location: /etc/nginx/conf.d/
     port: 80
