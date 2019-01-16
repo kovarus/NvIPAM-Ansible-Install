@@ -1,0 +1,19 @@
+---
+- name: Install core NvIPAM components
+  hosts: all
+  tasks:
+  - name: Install EPEL
+    yum:
+      name: epel-release
+      state: present
+
+  - name: Install Python3.6
+    yum:
+      name: python36
+      state: present
+
+
+  - name: Install git
+    yum:
+      name: git
+      state: present

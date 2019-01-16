@@ -1,0 +1,6 @@
+# Install geerlingguy.postgresql
+- src: geerlingguy.postgresql
+
+# Install NGINX role from galaxy
+- src: geerlingguy.nginx
+
