@@ -2,7 +2,7 @@
 - name: Install core NvIPAM components
   hosts: all
   vars_files:
-    - vars/main.yml
+    - vars/all
   tasks:
   - name: Install EPEL
     yum:

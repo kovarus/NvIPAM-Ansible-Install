@@ -3,6 +3,7 @@
     hosts: localhost
     vars_files:
       -  vars/main.yml
+      -  vars/postgresql.yml
     roles:
         - common
         - role: geerlingguy.postgresql
