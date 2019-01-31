@@ -1,10 +1,12 @@
 ---
-  - name: Install NvIPAM
-    hosts: localhost
-    vars_files:
-      -  vars/main.yml
-      -  vars/postgresql.yml
-    roles:
-        - common
-        - role: geerlingguy.postgresql
-        - role: nginxinc.nginx
+- name: Install NvIPAM
+  hosts: localhost
+  pre_tasks:
+    - name: install PostgreSQL 9.6 repository
+      yum:
+        name: https://download.postgresql.org/pub/repos/yum/9.6/redhat/rhel-7-x86_64/pgdg-centos96-9.6-3.noarch.rpm
+        state: present
+      become: yes
+  roles:
+      - common
+      - role: geerlingguy.postgresql
