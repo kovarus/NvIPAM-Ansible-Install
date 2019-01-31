@@ -4,3 +4,6 @@
 # Install NGINX role from galaxy
 - src: nginxinc.nginx
 
+# Install PowerDNS role from galaxy
+- src: powerdns.pdns
+

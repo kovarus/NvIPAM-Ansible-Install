@@ -34,3 +34,21 @@ nginx_http_template:
           html_file_location: /usr/share/nginx/html
           html_file_name: index.html
           autoindex: false
+
+pdns_user: pdns
+pdns_group: pdns
+pdns_service_name: "pdns"
+pdns_config_dir: "{{ default_pdns_config_dir }}"
+pdns_config_file: "pdns.conf"
+pdns_config:
+  master: yes
+  slave: no
+  local-address: "{{ ansible_default_ipv4.address }}" 
+  local-port: '5300'
+
+pdns_backends:
+  'gpgsql:serverone':
+    host: "{{ ansible_default_ipv4.address }}"
+    user: nvipam
+    password: VMware1!
+    dbname: nvipam
