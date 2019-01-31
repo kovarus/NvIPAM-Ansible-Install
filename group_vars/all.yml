@@ -22,6 +22,9 @@ postgresql_users:
 
 postgresql_hba_entries:
    - { type: local, database: all, user: all, address '127.0.0.1/32', auth_method: trust }
+   - { type: local, database: all, user: postgres, auth_method: peer }
+   - { type: local, database: all, user: all, auth_method: peer }
+   - { type: host, database: all, user: all, address: '::1/128', auth_method: md5 }
 
 nginx_http_template_enable: true
 nginx_http_template:
