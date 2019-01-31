@@ -7,6 +7,11 @@
         name: https://download.postgresql.org/pub/repos/yum/9.6/redhat/rhel-7-x86_64/pgdg-centos96-9.6-3.noarch.rpm
         state: present
       become: yes
+    
+    - name: Install epel-release
+      yum:
+        name: epel-release
+
   roles:
       - common
       - role: geerlingguy.postgresql
