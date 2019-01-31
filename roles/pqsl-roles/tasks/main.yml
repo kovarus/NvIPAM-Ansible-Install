@@ -1,0 +1,7 @@
+---
+  - name: Grant all roles to NvIAPM on nvipam
+    postgresql_privs:
+      db: nvipam
+      privs: ALL
+      type: database
+      role: nvipam
