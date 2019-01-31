@@ -13,7 +13,7 @@
 
   roles:
       - common
-      - pdns-schema
+#      - pdns-schema
       - role: geerlingguy.postgresql
       - role: nginxinc.nginx
       - role: powerdns.pdns 
