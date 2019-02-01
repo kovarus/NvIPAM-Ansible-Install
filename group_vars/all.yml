@@ -50,7 +50,8 @@ pdns_config_file: "pdns.conf"
 pdns_config:
   master: yes
   slave: no
-  local-address: "{{ ansible_default_ipv4.address }}" 
+#  local-address: "{{ ansible_default_ipv4.address }}" 
+  local-address: "0.0.0.0" 
   local-port: '5300'
   api: yes
   api-key: "VMware1!"
@@ -75,8 +76,10 @@ pdns_rec_group: "{{ default_pdns_rec_group }}"
 pdns_rec_config_dir: "/etc/powerdns"
 pdns_rec_config_file: "recursor.conf"
 pdns_rec_config:
-  allow-from: "10.0.0.0/8"
-  local-address: "{{ ansible_default_ipv4.address }}:53"
-  forward-zones: dev.corp.local=127.0.0.1:5300
-  forward-zones+: dev.example.com=127.0.0.1:5300
+#  allow-from: 
+#    - "10.0.0.0/8"
+  local-address: "0.0.0.0:53"
+#  forward-zones: dev.corp.local=127.0.0.1:5300
+#    - "dev.corp.local=127.0.0.1:5300"
+#    - "dev.example.com=127.0.0.1:5300"
 
