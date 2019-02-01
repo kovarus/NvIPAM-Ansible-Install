@@ -8,5 +8,6 @@
       - python36
       - python36-pip
       - gcc
-      - g++
+      - gcc-c++
       - make
+      - python36-devel

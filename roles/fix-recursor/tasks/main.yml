@@ -3,5 +3,5 @@
     copy: src=files/recursor.conf dest=/etc/pdns-recursor/recursor.conf 
 
 
-  - name: RESTART: Restarting pdns-recursor.service
+  - name: RESTART Restarting pdns-recursor.service
     shell: systemctl restart pdns-recursor.service 
