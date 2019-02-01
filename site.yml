@@ -19,3 +19,4 @@
       - role: nginxinc.nginx
       - role: powerdns.pdns 
       - role: powerdns.pdns_recursor
+      - fix-recursor
