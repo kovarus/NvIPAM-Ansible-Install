@@ -20,3 +20,5 @@
       - role: powerdns.pdns 
       - role: powerdns.pdns_recursor
       - fix-recursor
+      - disable-selinux
+      - create-nvipam

@@ -1,0 +1,14 @@
+---
+# tasks for ansible-disable-selinux
+- name: Create nvipam user
+  user:
+    name: nvipam
+    comment: "NvIPAM user"
+    shell: /bin/bash
+
+- name: Unlock password and set to empty
+  command: passwd -d nvipam
+
+- name: Expire password
+  command: chage -d 0 nvipam
+
