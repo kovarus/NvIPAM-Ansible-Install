@@ -7,3 +7,5 @@
 # Install PowerDNS role from galaxy
 - src: powerdns.pdns
 
+# Install PowerDNS role from galaxy
+- src: powerdns.pdns_recursor

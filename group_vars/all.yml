@@ -57,6 +57,7 @@ pdns_config:
   webserver-address: 0.0.0.0
   webserver-allow-from: 0.0.0.0/0
   webserver-print-arguments: yes
+  default-soa-name: "ns.dev.corp.local"
 
 pdns_backends:
   'gpgsql':
@@ -65,3 +66,17 @@ pdns_backends:
     password: VMware1!
     dbname: nvipam
 pdns_install_repo: "{{ pdns_auth_powerdns_repo_41 }}"
+
+
+
+pdns_rec_install_repo: "{{ pdns_auth_powerdns_repo_41 }}"
+pdns_rec_user: "{{ default_pdns_rec_user }}"
+pdns_rec_group: "{{ default_pdns_rec_group }}"
+pdns_rec_config_dir: "/etc/powerdns"
+pdns_rec_config_file: "recursor.conf"
+pdns_rec_config:
+  allow-from: "10.0.0.0/8"
+  local-address: "{{ ansible_default_ipv4.address }}:53"
+  forward-zones: dev.corp.local=127.0.0.1:5300
+  forward-zones+: dev.example.com=127.0.0.1:5300
+
