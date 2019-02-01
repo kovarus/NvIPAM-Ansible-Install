@@ -1,0 +1,3 @@
+app/venv/
+*.retry
+*.rpm
