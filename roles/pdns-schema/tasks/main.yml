@@ -4,4 +4,5 @@
 
 
   - name: Import PDNS 4.1 postgres schema
-    command: psql -U nvipam -d nvipam < /tmp/psql-schema.sql
+    become_user: postgres
+    shell: psql -U nvipam nvipam < /tmp/psql-schema.sql
