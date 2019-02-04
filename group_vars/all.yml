@@ -70,7 +70,7 @@ pdns_install_repo: "{{ pdns_auth_powerdns_repo_41 }}"
 
 
 
-pdns_rec_install_repo: "{{ pdns_auth_powerdns_repo_41 }}"
+pdns_rec_install_repo: "{{ pdns_rec_powerdns_repo_41 }}"
 pdns_rec_user: "{{ default_pdns_rec_user }}"
 pdns_rec_group: "{{ default_pdns_rec_group }}"
 pdns_rec_config_dir: "/etc/powerdns"

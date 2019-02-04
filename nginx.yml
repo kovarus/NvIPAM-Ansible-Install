@@ -16,12 +16,10 @@
       - role: geerlingguy.postgresql
       - pqsl-roles
       - pdns-schema
+      - role: nginxinc.nginx
       - role: powerdns.pdns 
       - role: powerdns.pdns_recursor
       - fix-recursor
       - disable-selinux
       - create-nvipam
       - nvipam-venv
-      - role: nginxinc.nginx
-      - setup-uwsgi
-      - setup-app
