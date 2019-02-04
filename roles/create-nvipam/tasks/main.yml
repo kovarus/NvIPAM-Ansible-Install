@@ -1,5 +1,4 @@
 ---
-# tasks for ansible-disable-selinux
 - name: Create nvipam user
   user:
     name: nvipam

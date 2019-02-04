@@ -6,7 +6,7 @@
       path: /home/nvipam/app
       state: directory
 
-  - name: Install virtualenv via pip3.6
+  - name: INSTALL virtualenv via pip3.6
     pip:
       name: virtualenv
       executable: pip3.6
