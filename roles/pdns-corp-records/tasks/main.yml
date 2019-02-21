@@ -1,0 +1,7 @@
+---
+- name: Setup sample corp.local domain in pdns 
+  command: /usr/bin/pdnsutil create-zone dev.corp.local ns1.dev.corp.local
+
+- name: Add nameserver A Record 
+  command: /usr/bin/pdnsutil add-record dev.corp.local ns1 A {{ ansible_default_ipv4.address }}
+

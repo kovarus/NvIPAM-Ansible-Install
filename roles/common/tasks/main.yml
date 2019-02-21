@@ -11,3 +11,4 @@
       - gcc-c++
       - make
       - python36-devel
+      - bind-utils

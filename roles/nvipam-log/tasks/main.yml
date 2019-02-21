@@ -1,0 +1,7 @@
+---
+- name: Create nvipam log directory 
+  file:
+    path: /var/log/nviapm
+    state: directory 
+    group: nvipam
+    owner: nvipam
