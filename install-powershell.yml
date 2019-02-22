@@ -1,0 +1,5 @@
+- name: Install PowerShell
+  hosts: localhost
+
+  roles:
+      - install-powershell

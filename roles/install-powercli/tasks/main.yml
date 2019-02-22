@@ -1,0 +1,6 @@
+---
+  - name: Set Installation Policy 
+    command: pwsh -Command 'Set-PSRepository -Name "PSGallery" -InstallationPolicy "Trusted"'
+
+  - name: Install PowerCLI
+    command: pwsh -Command 'Find-Module "VMware.PowerCLI" | Install-Module ' 
