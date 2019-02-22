@@ -26,4 +26,4 @@
       - role: nginxinc.nginx
       - setup-uwsgi
       - setup-app
-      - pdns-corp-record
+      - pdns-corp-records
