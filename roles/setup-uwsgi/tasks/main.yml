@@ -1,0 +1,8 @@
+---
+  - name: Add nviapm to nginx group
+    command: usermod -a -G nvipam nginx
+
+  - name: Set permissions on nvipam home directory
+    file:
+      path: /home/nvipam
+      mode: 0710

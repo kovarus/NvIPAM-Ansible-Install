@@ -1,0 +1,8 @@
+---
+  - name: Copy sql file to temp
+    copy: src=files/psql-schema.sql dest=/tmp/psql-schema.sql 
+
+
+  - name: Import PDNS 4.1 postgres schema
+    become_user: postgres
+    shell: psql -U nvipam nvipam < /tmp/psql-schema.sql

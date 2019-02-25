@@ -1,0 +1,5 @@
+- name: Install NvIPAM package in venv
+  hosts: localhost
+
+  roles:
+      - pdns-corp-records

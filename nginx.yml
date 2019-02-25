@@ -1,0 +1,25 @@
+- name: Install NvIPAM
+  hosts: localhost
+  pre_tasks:
+    - name: install PostgreSQL 9.6 repository
+      yum:
+        name: https://download.postgresql.org/pub/repos/yum/9.6/redhat/rhel-7-x86_64/pgdg-centos96-9.6-3.noarch.rpm
+        state: present
+      become: yes
+    
+    - name: Install epel-release
+      yum:
+        name: epel-release
+
+  roles:
+      - common
+      - role: geerlingguy.postgresql
+      - pqsl-roles
+      - pdns-schema
+      - role: nginxinc.nginx
+      - role: powerdns.pdns 
+      - role: powerdns.pdns_recursor
+      - fix-recursor
+      - disable-selinux
+      - create-nvipam
+      - nvipam-venv

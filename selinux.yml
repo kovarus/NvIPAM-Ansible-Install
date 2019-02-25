@@ -1,0 +1,6 @@
+- name: Install NvIPAM
+  hosts: localhost
+
+  roles:
+      - disable-selinux
+      - create-nvipam

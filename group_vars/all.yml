@@ -1,0 +1,85 @@
+postgresql_enablerepo: "pgdg96"
+postgresql_version: 9.6
+postgresql_data_dir: /var/lib/pgsql/9.6/data
+postgresql_bin_path: /usr/pgsql-9.6/bin
+postgresql_config_path: /var/lib/pgsql/9.6/data
+postgresql_daemon: postgresql-9.6.service
+postgresql_packages:
+  - postgresql96
+  - postgresql96-server
+  - postgresql96-libs
+  - postgresql96-contrib
+  - postgresql96-devel
+
+postgresql_users:
+  - name: nvipam
+    password: VMware1!
+
+postgresql_databases:
+  - name: nvipam
+
+postgresql_hba_entries:
+  - { type: local, database: all, user: postgres, auth_method: trust }
+  - { type: local, database: all, user: nvipam, auth_method: trust }
+  - { type: local, database: all, user: all, auth_method: peer }
+  - { type: host, database: all, user: all, address: '127.0.0.1/32', auth_method: md5 }
+  - { type: host, database: all, user: all, address: '::1/128', auth_method: md5 } 
+
+nginx_http_template_enable: true
+nginx_http_template:
+  default:
+    template_file: ./templates/default.conf.j2
+    conf_file_name: default.conf
+    conf_file_location: /etc/nginx/conf.d/
+    port: 80
+    server_name: localhost
+    error_page: /usr/share/nginx/html
+    web_server:
+      locations:
+        default:
+          location: /
+          html_file_location: /usr/share/nginx/html
+          html_file_name: index.html
+          autoindex: false
+
+pdns_user: pdns
+pdns_group: pdns
+pdns_service_name: "pdns"
+pdns_config_dir: "{{ default_pdns_config_dir }}"
+pdns_config_file: "pdns.conf"
+pdns_config:
+  master: yes
+  slave: no
+#  local-address: "{{ ansible_default_ipv4.address }}" 
+  local-address: "0.0.0.0" 
+  local-port: '5300'
+  api: yes
+  api-key: "VMware1!"
+  webserver-address: 0.0.0.0
+  webserver-allow-from: 0.0.0.0/0
+  webserver-print-arguments: yes
+  default-soa-name: "ns.dev.corp.local"
+
+pdns_backends:
+  'gpgsql':
+    host: localhost
+    user: nvipam
+    password: VMware1!
+    dbname: nvipam
+pdns_install_repo: "{{ pdns_auth_powerdns_repo_41 }}"
+
+
+
+pdns_rec_install_repo: "{{ pdns_rec_powerdns_repo_41 }}"
+pdns_rec_user: "{{ default_pdns_rec_user }}"
+pdns_rec_group: "{{ default_pdns_rec_group }}"
+pdns_rec_config_dir: "/etc/powerdns"
+pdns_rec_config_file: "recursor.conf"
+pdns_rec_config:
+#  allow-from: 
+#    - "10.0.0.0/8"
+  local-address: "0.0.0.0:53"
+#  forward-zones: dev.corp.local=127.0.0.1:5300
+#    - "dev.corp.local=127.0.0.1:5300"
+#    - "dev.example.com=127.0.0.1:5300"
+

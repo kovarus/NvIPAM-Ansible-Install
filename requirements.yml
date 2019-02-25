@@ -1,0 +1,11 @@
+# Install geerlingguy.postgresql
+- src: geerlingguy.postgresql
+
+# Install NGINX role from galaxy
+- src: nginxinc.nginx
+
+# Install PowerDNS role from galaxy
+- src: powerdns.pdns
+
+# Install PowerDNS role from galaxy
+- src: powerdns.pdns_recursor

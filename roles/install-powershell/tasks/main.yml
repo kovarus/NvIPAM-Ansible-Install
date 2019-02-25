@@ -1,0 +1,10 @@
+---
+  - name: Install powershell repo
+    get_url:
+      url: https://packages.microsoft.com/config/rhel/7/prod.repo
+      dest: /etc/yum.repos.d/microsoft.repo
+
+  - name: Install powershell
+    yum: 
+      name: powershell
+      state: latest
