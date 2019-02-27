@@ -1,0 +1,5 @@
+- name: Setup NvIPAM database using migrate 
+  hosts: localhost
+
+  roles:
+      - nvipam-db-init

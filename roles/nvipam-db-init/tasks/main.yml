@@ -1,0 +1,17 @@
+---
+  - name: Guard code to make sure we are in th virtualenv
+    become: yes
+    become_user: nvipam
+    command: echo $VIRTUAL_ENV
+    register: command_result
+    failed_when: command_result.stdout ==  ""
+
+  - debug: var=command_result
+
+  - name: Run Flask db init 
+    become: yes
+    become_user: nvipam
+    command: python /home/nvipam/nvipam/init_db_tables.py
+    register: db_init_result
+
+  - debug: var=db_init_result

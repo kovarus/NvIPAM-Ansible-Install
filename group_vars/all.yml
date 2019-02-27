@@ -1,3 +1,5 @@
+nvipam_repo: "https://github.com/kovarus/NvIPAM.git"
+
 postgresql_enablerepo: "pgdg96"
 postgresql_version: 9.6
 postgresql_data_dir: /var/lib/pgsql/9.6/data

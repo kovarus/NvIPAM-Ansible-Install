@@ -1,0 +1,13 @@
+---
+  - name: Download NvIPAM from repo
+    git:
+      repo: "{{ nvipam_repo }}"
+      dest: /home/nvipam/nvipam
+
+  - name: Change app directory ownership to nvipam
+    file:
+      path: /home/nvipam
+      owner: nvipam
+      group: nvipam
+      recurse: yes
+

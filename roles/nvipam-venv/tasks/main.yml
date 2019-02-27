@@ -1,25 +1,26 @@
 ---
-  - name: Create app directory
-    become: yes
-    become_user: nvipam
-    file:
-      path: /home/nvipam/app
-      state: directory
-
   - name: INSTALL virtualenv via pip3.6
     pip:
       name: virtualenv
       executable: pip3.6
 
-  - name: Create virtualvenv 
+  - name: Create NvIPAM venv 
     become: yes
     become_user: nvipam
     pip:
       name: 
         - flask
         - uwsgi
-      virtualenv: /home/nvipam/app/venv
+      virtualenv: /home/nvipam/nvipam/venv
       virtualenv_python: /bin/python3.6
     environment:
       PATH: "{{ ansible_env.PATH }}"
 
+  - name: Install NvIPAM pip requirements 
+    become: yes
+    become_user: nvipam
+    pip:
+      requirements: /home/nvipam/nvipam/requirements.txt
+      virtualenv: /home/nvipam/nvipam/venv
+#     environment:
+#       PATH: "{{ ansible_env.PATH }}"
