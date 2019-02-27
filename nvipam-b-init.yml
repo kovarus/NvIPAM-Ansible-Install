@@ -1,6 +1,0 @@
-- name: Setup NvIPAM from github
-  hosts: localhost
-
-  roles:
-      - setup-nvipam
-      - nvipam-venv

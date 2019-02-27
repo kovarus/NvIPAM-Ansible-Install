@@ -21,9 +21,13 @@
       - fix-recursor
       - disable-selinux
       - create-nvipam
+      - setup-nvipam
       - nvipam-log
       - nvipam-venv
       - role: nginxinc.nginx
-      - setup-uwsgi
-      - setup-app
+#      - setup-uwsgi
+#      - setup-app
+#      - setup-nvipam
+#      - nvipam-venv
+      - nvipam-db-init
       - pdns-corp-records

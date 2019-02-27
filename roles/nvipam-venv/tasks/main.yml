@@ -24,3 +24,11 @@
       virtualenv: /home/nvipam/nvipam/venv
 #     environment:
 #       PATH: "{{ ansible_env.PATH }}"
+
+  - name: copy pyvenv file to venv
+    copy:
+      src: files/pyvenv
+      dest: /home/nvipam/nvipam/venv/bin/pyvenv
+      owner: nvipam
+      group: nvipam
+      mode: 0755
