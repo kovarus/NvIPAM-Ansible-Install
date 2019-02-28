@@ -20,14 +20,10 @@
       - role: powerdns.pdns_recursor
       - fix-recursor
       - disable-selinux
+      - role: nginxinc.nginx
       - create-nvipam
       - setup-nvipam
       - nvipam-log
       - nvipam-venv
-      - role: nginxinc.nginx
-#      - setup-uwsgi
-#      - setup-app
-#      - setup-nvipam
-#      - nvipam-venv
-      - nvipam-db-init
+      - setup-uwsgi
       - pdns-corp-records

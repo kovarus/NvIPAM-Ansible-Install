@@ -1,5 +1,6 @@
-- name: Setup NvIPAM database using migrate 
+- name: Setup NvIPAM database  
   hosts: localhost
 
   roles:
+      - copy-pyvenv-venv
       - nvipam-db-init

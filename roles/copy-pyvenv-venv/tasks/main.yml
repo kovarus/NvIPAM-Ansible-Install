@@ -1,0 +1,9 @@
+---
+  - name: Copy pyvenv file to venv/bin
+    copy:
+      src: files/pyvenv
+      dest: /home/nvipam/nvipam/venv/bin/pyvenv
+      mode: 0755
+
+
+

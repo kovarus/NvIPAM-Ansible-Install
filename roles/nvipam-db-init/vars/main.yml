@@ -1,5 +1,5 @@
 PROJECT_HOME: "/home/nvipam/nvipam"
-ansible_python_interpreter: "/home/nvipam/nvipam/venv/bin/pyvenv"
+ansible_python_interpreter: "/home/nvipam/nviapm/venv/bin/pyvenv"
 venv: "/home/nvipam/nvipam/venv"
 FLASK_APP: app
 

@@ -4,6 +4,16 @@
       repo: "{{ nvipam_repo }}"
       dest: /home/nvipam/nvipam
 
+  - name: Copy nginx config file into /etc/nginx/conf.d 
+    copy:
+      src: files/default.conf
+      dest: /etc/nginx/conf.d/default.conf
+
+  - name: Copy nvipam.service into /etc/systemd/system/
+    copy:
+      src: files/nvipam.service
+      dest: /etc/systemd/system/nvipam.service 
+
   - name: Change app directory ownership to nvipam
     file:
       path: /home/nvipam
