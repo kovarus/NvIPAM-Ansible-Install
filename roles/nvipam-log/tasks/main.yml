@@ -1,7 +1,14 @@
 ---
 - name: Create nvipam log directory 
   file:
-    path: /var/log/nviapm
+    path: /var/log/nvipam
     state: directory 
     group: nvipam
     owner: nvipam
+
+- name: Touch the NvIPAM log file
+  file:
+    path: /var/log/nvipam/nvipam.log
+    state: touch
+    owner: nvipam
+    group: nvipam
