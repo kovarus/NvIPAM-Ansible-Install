@@ -2,3 +2,4 @@ app/venv/
 *.retry
 *.rpm
 migrations/
+*.iml
